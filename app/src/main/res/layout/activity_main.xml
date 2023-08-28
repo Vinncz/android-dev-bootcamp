@@ -30,37 +30,38 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/textView2"
+                    android:id="@+id/title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
                     android:fontFamily="@font/manrope"
                     android:paddingBottom="24dp"
-                    android:text="Log into your account"
-                    android:textFontWeight="900"
-                    android:textSize="24dp" />
+                    android:text="Log into\nyour account"
+                    android:textFontWeight="800"
+                    android:textSize="30dp" />
 
                 <EditText
-                    android:id="@+id/editTextTextEmailAddress"
+                    android:id="@+id/txtEmail"
                     android:layout_width="match_parent"
                     android:layout_height="54dp"
-                    android:layout_marginBottom="8dp"
+                    android:layout_marginBottom="12dp"
                     android:focusedByDefault="true"
                     android:fontFamily="@font/manrope"
                     android:hint="Email"
                     android:inputType="textEmailAddress"
-                    android:paddingBottom="8dp" />
+                    style="@style/Widget.Material3.TextInputEditText.OutlinedBox"
+                    android:background="@color/material_dynamic_neutral_variant95"/>
 
                 <EditText
-                    android:id="@+id/editTextNumberPassword"
+                    android:id="@+id/txtPassword"
+                    style="@style/Widget.Material3.TextInputEditText.OutlinedBox"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
                     android:layout_height="54dp"
-                    android:layout_marginBottom="8dp"
+                    android:layout_marginBottom="32dp"
+                    android:background="@color/material_dynamic_neutral_variant95"
                     android:fontFamily="@font/manrope"
                     android:hint="Password"
-                    android:inputType="textPassword"
-                    android:paddingBottom="8dp" />
+                    android:inputType="textPassword" />
 
             </LinearLayout>
 
@@ -71,8 +72,25 @@
                 android:fontFamily="@font/manrope"
                 android:padding="16dp"
                 android:text="Login"
+                style="@style/ShapeAppearanceOverlay.Material3.Button"
                 android:textAlignment="center"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp"/>
+
+            <Button
+                style="@style/Widget.Material3.Button"
+                android:id="@+id/registerButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/manrope"
+                android:padding="16dp"
+                android:alpha="0.5"
+                android:text="I don't have an account"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:background="@android:color/transparent"
+                android:layout_marginBottom="64dp"/>
 
         </LinearLayout>
     </LinearLayout>
