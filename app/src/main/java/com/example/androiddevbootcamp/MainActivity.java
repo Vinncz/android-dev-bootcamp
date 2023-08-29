@@ -3,6 +3,7 @@ package com.example.androiddevbootcamp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.view.View;
 import android.view.WindowManager;
 
@@ -77,12 +78,27 @@ public class MainActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             FirebaseUser user = mAuth.getCurrentUser();
                             Toast.makeText(MainActivity.this, "You are logged in as " + user.getEmail(), Toast.LENGTH_SHORT).show();
+
+                            Intent toHome = new Intent(MainActivity.this, HomeActivity.class);
+                            startActivity(toHome);
+                            finish();
+
                         } else {
                             Toast.makeText(MainActivity.this, "Wrong credentials", Toast.LENGTH_SHORT).show();
                             return;
                         }
                     }
                 });
+            }
+        });
+
+        Button register = findViewById(R.id.registerButton);
+        register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick (View view) {
+                Intent toRegister = new Intent(MainActivity.this, RegisterActivity.class);
+                startActivity(toRegister);
+                finish();
             }
         });
     }
