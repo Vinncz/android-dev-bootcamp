@@ -2,4 +2,7 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="edittext_background_light">@android:color/system_accent1_50</color>
+    <color name="edittext_background_dark">@android:color/system_accent1_900</color>
 </resources>

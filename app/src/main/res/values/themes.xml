@@ -5,13 +5,23 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
+    <style name="OutlinedButton">
+        <item name="android:textColor">@android:color/system_accent1_900</item>
+    </style>
+
+    <style name="Title">
+        <item name="android:textColor">@android:color/system_accent1_600</item>
+    </style>
+
     <style name="Theme.AndroidDevBootcamp" parent="Base.Theme.AndroidDevBootcamp" >
         <item name="colorPrimary">@android:color/system_accent1_500</item>
+        <item name="colorPrimaryDark">@android:color/system_accent1_800</item>
         <item name="colorSecondary">@android:color/system_accent2_500</item>
-        <item name="colorPrimaryDark">@android:color/system_accent1_700</item>
         <item name="colorAccent">@android:color/system_accent1_700</item>
+        <item name="editTextBackground">@android:color/system_accent2_50</item>
         <item name="android:textColorPrimary">@android:color/system_accent1_900</item>
-<!--        <item name="android:windowBackground">@android:color/system_accent2_500</item>-->
-<!--        <item name="android:navigationBarColor">@android:color/system_accent2_500</item>-->
+        <item name="textAppearanceButton">@android:color/white</item>
     </style>
+
+
 </resources>
