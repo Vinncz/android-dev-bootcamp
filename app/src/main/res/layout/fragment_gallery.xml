@@ -18,7 +18,17 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:id="@+id/verticalShelf"
-            />
+            >
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Click the respective image to see their description."
+                    android:layout_marginBottom="12dp"
+                />
+
+            </LinearLayout>
 
         </ScrollView>
 

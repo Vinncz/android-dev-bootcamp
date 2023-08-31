@@ -131,7 +131,7 @@ public class GalleryFragment extends Fragment {
                                     LinearLayout.LayoutParams.MATCH_PARENT, // Width
                                     LinearLayout.LayoutParams.WRAP_CONTENT  // Height
                             );
-                            layoutParams.setMargins(0, 0, 0, 16);
+                            layoutParams.setMargins(0, 0, 0, 32);
 
                             iv.setLayoutParams(layoutParams);
                             iv.setOnClickListener(new View.OnClickListener() {

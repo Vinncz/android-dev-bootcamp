@@ -21,13 +21,22 @@
                 android:id="@+id/txName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:text="Image Name"
+                android:fontFamily="@font/manrope"
+                android:textSize="24sp"
+                android:textFontWeight="800"
+                android:layout_marginBottom="8dp"
+            />
 
             <TextView
                 android:id="@+id/txDesc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:fontFamily="@font/manrope"
+                android:text="Image Description"
+                android:textSize="16sp"
+                android:layout_marginBottom="16dp"
+            />
 
         </LinearLayout>
     </ScrollView>
