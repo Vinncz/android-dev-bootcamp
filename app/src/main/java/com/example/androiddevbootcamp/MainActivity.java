@@ -78,13 +78,6 @@ public class MainActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             FirebaseUser user = mAuth.getCurrentUser();
-//                            Toast.makeText(MainActivity.this, "You are logged in as " + user.getEmail(), Toast.LENGTH_SHORT).show();
-
-                            SharedPreferences sp = getSharedPreferences("logged-in-user-data", MODE_PRIVATE);
-                            SharedPreferences.Editor spe = sp.edit();
-
-                            spe.putString("name", user.getEmail());
-                            spe.apply();
 
                             Intent toHome = new Intent(MainActivity.this, HomeActivity.class);
                             startActivity(toHome);

@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
@@ -49,58 +50,6 @@ public class RegisterActivity extends AppCompatActivity {
                 String confirmPassword = confirmPasswordField.getText().toString();
 
                 performRegistration(name, email, password, confirmPassword);
-
-//                Boolean fails = false;
-//
-//                if ( name.isEmpty() || name.isBlank() ) {
-//                    Toast.makeText(RegisterActivity.this, "Name field cannot be empty", Toast.LENGTH_LONG).show();
-//                    fails = true;
-//
-//                } else if ( name.length() < 5 ) {
-//                    Toast.makeText(RegisterActivity.this, "Name must at least be 5 characters long", Toast.LENGTH_LONG).show();
-//                    fails = true;
-//
-//                } else if ( email.isEmpty() || email.isBlank() ) {
-//                    Toast.makeText(RegisterActivity.this, "Email field cannot be empty", Toast.LENGTH_LONG).show();
-//                    fails = true;
-//
-//                } else if ( !email.contains("@") ) {
-//                    Toast.makeText(RegisterActivity.this, "Email field must contains '@' symbol", Toast.LENGTH_LONG).show();
-//                    fails = true;
-//
-//                } else if ( !email.endsWith(".com") ) {
-//                    Toast.makeText(RegisterActivity.this, "Email field must ends with '.com'", Toast.LENGTH_LONG).show();
-//                    fails = true;
-//
-//                } else if ( password.isEmpty() || password.isBlank() ) {
-//                    Toast.makeText(RegisterActivity.this, "Password field cannot be empty", Toast.LENGTH_LONG).show();
-//                    fails = true;
-//
-//                } else if ( !password.equals(confirmPassword) ) {
-//                    Toast.makeText(RegisterActivity.this, "Password confirmation must match the original password", Toast.LENGTH_LONG).show();
-//                    fails = true;
-//
-//                } else if ( password.length() < 8 ) {
-//                    Toast.makeText(RegisterActivity.this, "Password must at least be 8 characters long", Toast.LENGTH_LONG).show();
-//                    fails = true;
-//
-//                }
-//                if ( fails ) {
-//                    return;
-//                }
-
-//                mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
-//                    @Override
-//                    public void onComplete(@NonNull Task<AuthResult> task) {
-//                        if (task.isSuccessful()) {
-//                            FirebaseUser user = mAuth.getCurrentUser();
-//                            Toast.makeText(RegisterActivity.this, "You are logged in as " + user.getEmail(), Toast.LENGTH_SHORT).show();
-//                        } else {
-//                            Toast.makeText(RegisterActivity.this, "Wrong credentials", Toast.LENGTH_SHORT).show();
-//                            return;
-//                        }
-//                    }
-//                });
             }
         });
 
@@ -162,6 +111,18 @@ public class RegisterActivity extends AppCompatActivity {
                             if (task.isSuccessful()) {
                                 FirebaseUser user = mAuth.getCurrentUser();
                                 Toast.makeText(RegisterActivity.this, "You have registered as " + user.getEmail(), Toast.LENGTH_SHORT).show();
+
+                                String uid = user.getUid();
+
+                                SharedPreferences sp = getSharedPreferences("logged-in-user-data", MODE_PRIVATE);
+                                SharedPreferences.Editor spe = sp.edit();
+
+                                spe.putString(uid + ".name", name);
+                                spe.putString(uid + ".email", email);
+//                                spe.putString(uid + ".password", _password);
+
+                                spe.apply();
+
 
                                 Intent toHome = new Intent(RegisterActivity.this, HomeActivity.class);
                                 startActivity(toHome);
