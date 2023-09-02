@@ -53,6 +53,20 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i = new Intent(HomeActivity.this, ProfileActivity.class);
                 startActivity(i);
+
+                finish();
+            }
+        });
+
+        Button lo = findViewById(R.id.logoutButton);
+        lo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mAuth.signOut();
+                Intent i = new Intent(HomeActivity.this, MainActivity.class);
+                startActivity(i);
+
+                finish();
             }
         });
     }
