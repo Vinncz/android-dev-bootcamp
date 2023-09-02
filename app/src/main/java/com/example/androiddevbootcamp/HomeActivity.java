@@ -53,8 +53,6 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i = new Intent(HomeActivity.this, ProfileActivity.class);
                 startActivity(i);
-
-                finish();
             }
         });
 
@@ -64,6 +62,7 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View view) {
                 mAuth.signOut();
                 Intent i = new Intent(HomeActivity.this, MainActivity.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(i);
 
                 finish();

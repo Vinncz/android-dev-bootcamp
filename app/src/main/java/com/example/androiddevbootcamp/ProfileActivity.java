@@ -45,9 +45,9 @@ public class ProfileActivity extends AppCompatActivity {
             public void onClick(View view) {
                 mAuth.signOut();
                 Intent i = new Intent(ProfileActivity.this, MainActivity.class);
-                startActivity(i);
+                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
-                finish();
+                startActivity(i);
             }
         });
     }
