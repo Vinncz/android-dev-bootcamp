@@ -4,7 +4,7 @@
 
 Supports both dark and lightmode:
 
-// auth
+auth
 ![s](https://i.ibb.co/X8wHdSL/Screenshot-20230830-002545-Android-Dev-Bootcamp.png)
 ![s](https://i.ibb.co/dcJSPdf/Screenshot-20230830-002601-Android-Dev-Bootcamp.png)
 
